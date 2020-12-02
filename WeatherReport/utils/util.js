@@ -1,4 +1,4 @@
-const KEY = '你自己的key'
+const KEY = ''
 const ICON = 'icon'
 const NOWURL = 'https://devapi.qweather.com/v7/weather/now?key=' + KEY + '&location='
 const FORECASTURL = 'https://devapi.qweather.com/v7/weather/7d?key=' + KEY + '&location='

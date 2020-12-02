@@ -37,7 +37,7 @@ App({
   errLocation:function() {
     console.log('定位出错')
     var that=this;
-    util.showTipInfo("定位失败，将展示南京的天气","none",()=>{
+    util.showTipInfo("定位失败，将展示北京的天气","none",()=>{
       wx.setStorageSync('location',that.globalData.location);
     });
   },

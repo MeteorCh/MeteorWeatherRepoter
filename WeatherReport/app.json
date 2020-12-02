@@ -2,7 +2,6 @@
   "pages":[
     "pages/index/index",
     "pages/citySelect/citySelect",
-    "pages/logs/logs",
     "pages/lifeInfo/lifeInfo",
     "pages/addCity/addCity",
     "pages/previewWeather/previewWeather"

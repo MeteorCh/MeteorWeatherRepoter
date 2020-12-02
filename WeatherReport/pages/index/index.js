@@ -45,6 +45,7 @@ Page({
       //重新设置历史城市
       this.storeLocation();
       //请求数据
+      this.showLoading(this.data.cities.length - 1);
       this.loadWeather(this.data.cities[this.data.cities.length - 1].location, this.data.cities.length - 1);
     }
     this.data.updateLocation = null;
