@@ -1,0 +1,101 @@
+/**index.wxss**/
+@import "../template/template.wxss";
+.topCity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 200rpx;
+}
+
+.subTitle{
+  padding: 20rpx 30rpx;
+  color: gray;
+  font-size: 35rpx;
+}
+
+.city_item{
+  width: 100%;
+  text-align: center;
+  font-size: 50rpx;
+  font-style: bold;
+  color: #000;
+}
+
+
+.marginHelper{
+  height: 30rpx;
+
+}
+.today {
+  padding: 30rpx 0 30rpx 0;
+  margin: 0rpx 30rpx 0 30rpx;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f9f9f9;
+}
+.hover{
+  background: #ededed;
+}
+.today .weather {
+  display: flex;  
+  flex-direction:row;
+  padding-left: 30rpx;
+}
+.today .weather .pic {
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+}
+.today .weather .desc{
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  margin-right: 20rpx;
+}
+.today .weather .desc text {
+  color: #000;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  margin-top: 10rpx;
+}
+.today .temperature {
+  color: gray;
+  font-size: 50rpx;
+}
+
+.hourWeather {
+  height: 140rpx;
+  margin-top: 10rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  border-radius: 20rpx;
+  background: #f9f9f9;
+}
+.hourWeather .hourWeatherScroll{
+  display: flex;
+  flex-direction: row;
+  height: 140rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.hourWeather .hour{
+  display: flex;
+  flex-direction: column;
+  margin-right: 20rpx;
+}
+
+.hourWeather .hour .desc{
+  font-size: 25rpx;
+}
+
+.hourWeather .hour .pic{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+
+
+
+

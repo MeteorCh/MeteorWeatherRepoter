@@ -1,0 +1,27 @@
+<!--顶部导航栏-->
+<template name="navigation">
+  <view class='nav' style='height:{{navH}}px'>
+    <view class="content" bindtap="navTap">
+      <image src="{{icon}}" class="iconPic" />
+      <view class='title_text'>{{title}}</view>
+    </view>
+  </view>
+</template>
+
+<!--天气预报-->
+<template name="forecast">
+  <view class="forecastContainer">
+    <view wx:for="{{forcast}}" wx:for-item="forcast" class="forcast" wx:key="date">
+      <view class="date">{{forcast.date}}</view>
+      <view class="date">{{forcast.weekDay}}</view>
+      <image class="pic" src="{{forcast.iconDay}}"></image>
+      <view class="desc">
+        <text>{{forcast.textDay}}</text>
+        <text>{{forcast.windDirDay}} {{forcast.windScaleDay}}</text>
+      </view>
+      <view class="temperature">
+        <text>{{forcast.tempMin}}~{{forcast.tempMax}}°</text>
+      </view>
+    </view>
+  </view>
+</template>

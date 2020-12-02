@@ -1,0 +1,14 @@
+<!--pages/addCity/addCity.wxml-->
+<import src="../template/template.wxml" />
+<template is="navigation" data="{{navH:navH,icon:'/sysIcon/back.png',title:'城市管理'}}" />
+<view class="addCitycontent" style="margin-top: {{navH+10}}px">
+  <view class="searchbar" bindtap="searchCity">
+    <image class="pic" src="/sysIcon/search.svg" />
+    <text>搜索全球城市</text>
+  </view>
+  <mp-cells ext-class="my-cells">
+    <mp-slideview wx:for="{{historyLocation}}" wx:key="id" buttons="{{index==0?[]:slideButtons}}" bindbuttontap="slideButtonTap" bindtap="citySelect" data-status="{{index}}">
+      <mp-cell value="{{item.name}}" footer="{{index==0?'当前定位城市':(item.country+item.adm1)||''}}"/>
+    </mp-slideview>
+  </mp-cells>
+</view>

@@ -1,0 +1,45 @@
+<!--pages/citySelect/citySelect.wxml-->
+<import src="../template/template.wxml" />
+<view>
+  <template is="navigation" data="{{navH:navH,icon:'/sysIcon/back.png',title:'搜索城市'}}" />
+  <view class="searchbar" bindtap="searchCity" style="margin-top: {{navH+10}}px">
+    <image class="pic" src="/sysIcon/search.svg" />
+    <input placeholder="例如：南京" confirm-type="search" bindconfirm="startSearch" focus="true"/>
+  </view>
+  <view class="subTitle">热门城市</view>
+  <view class="record">
+    <view class="curLocation" bindtap="selectCurLocation">
+      <image class="pic" src="/sysIcon/location-white.svg" />
+      <text style="padding-right:20rpx">当前</text>
+    </view>
+    <view wx:for="{{hotCity}}" wx:key="*this" class="item" hover-class="hover" bindtap="onHotCitySel" data-status="{{index}}">
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+</view>
+<view class="fadeIn" wx:if="{{show}}">
+  <view class="weui-mask" bindtap="close"></view>
+  <view class="weui-half-screen-dialog" style="height:{{searchResHeight}}rpx;">
+    <view class="weui-half-screen-dialog__hd">
+      <view class="weui-half-screen-dialog__hd__side" bindtap="close">
+        <a class="weui-icon-btn">关闭
+          <i class="weui-icon-close-thin"></i>
+        </a>
+      </view>
+      <view class="weui-half-screen-dialog__hd__main">
+        <strong class="weui-half-screen-dialog__title">搜索结果</strong>
+      </view>
+    </view>
+    <view class="weui-half-screen-dialog__bd" style="padding-top:2px;height:650rpx;">
+      <scroll-view scroll-y>
+        <view class="searchResItem" wx:for="{{searchRes}}" wx:key="*this" hover-class="hover" bindtap="selectSearchCity" data-status="{{index}}">
+          <view class="nameInfo">
+            <view class="title">{{item.name}}</view>
+            <view class="desc">{{item.country}},{{item.adm1}},{{item.adm2}}</view>
+          </view>
+          <image src="/sysIcon/right-arrow.svg" class="pic"/>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

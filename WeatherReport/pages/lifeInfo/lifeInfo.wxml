@@ -1,0 +1,40 @@
+<!--pages/lifeInfo/lifeInfo.wxml-->
+<import src="../template/template.wxml" />
+<pullDownRefresh style="height:100%;" refreshing="{{refreshing}}" refreshed="{{refreshed}}" bind:refresh="refresh">
+  <template is="navigation" data="{{navH:navH,icon:'/sysIcon/back.png',title:'小天气'}}" />
+  <scroll-view scroll-y="true" style="margin-top: {{navH}}px;height:{{screenHeight-navH}}px;width:100%;">
+    <view class="today">
+      <view class="city_item">{{location.name}}</view>
+      <text class="day-desc">今天是{{weatherData.dateStr}}，{{weatherData.weekDay}}</text>
+      <view class="day-night">
+        <view class="weather">
+          <text class="day-desc">白天</text>
+          <image class="pic" src="{{weatherData.iconDay}}"></image>
+          <view class="desc">
+            <text>最高{{weatherData.tempMax}}℃</text>
+            <text>{{weatherData.windDirDay}}{{weatherData.windScaleDay}}级</text>
+          </view>
+        </view>
+        <view class="weather split"></view>
+        <view class="weather">
+          <image class="pic" src="{{weatherData.iconNight}}"></image>
+          <view class="desc">
+            <text>最低{{weatherData.tempMin}}℃</text>
+            <text><text>{{weatherData.windDirNight}}{{weatherData.windScaleNight}}级</text></text>
+          </view>
+          <text class="day-desc">夜间</text>
+        </view>
+      </view>
+      <text class="day-desc">日出:{{weatherData.sunrise}} 日落:{{weatherData.sunset}}</text>
+      <text class="more">{{tip}}</text>
+    </view>
+    <view class="card life">
+      <view class="title">生活指数</view>
+      <view class="tip">
+        <view class="item" wx:for="{{lifeInfo}}" wx:key="type">
+          <view class="line name">{{item.name}}：{{item.category}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</pullDownRefresh>

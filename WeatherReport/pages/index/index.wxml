@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<import src="../template/template.wxml" />
+<template is="navigation" data="{{navH:navH,icon:'/sysIcon/add.png',title:'小天气'}}" />
+<swiper style="margin-top: {{navH}}px;height:{{screenHeight-navH}}px;" indicator-dots="{{cities.length>1}}"
+  bindanimationfinish="itemChange" current="{{curSwiperItem}}">
+  <swiper-item style="height:100%" wx:for="{{cities}}" wx:key="id">
+    <scroll-view scroll-y="true" style="height:100%">
+      <pullDownRefresh data-index="{{index}}" refreshed="{{item.refresh}}" refreshing="{{item.refreshing}}"
+        bind:refresh="refresh">
+        <view class="today" hover-class="hover" bindtap="showLiftInfo">
+          <view class="city_item">{{item.location.name}}</view>
+          <view class="weather">
+            <image src="{{item.weatherData.now.icon}}" class="pic" />
+            <view class="desc">
+              <text>{{item.weatherData.now.text}}</text>
+              <text>{{item.weatherData.now.windDir}} {{item.weatherData.now.windScale}}级</text>
+            </view>
+          </view>
+          <text class="temperature">{{item.weatherData.now.temp}}℃</text>
+          <text style="color:#9c9c9c;font-size:30rpx">湿度: {{item.weatherData.now.humidity}} 体感温度: {{item.weatherData.now.feelsLike}}℃</text>
+        </view>
+        <view class="subTitle">逐小时预报</view>
+        <view class="hourWeather">
+          <scroll-view scroll-x="true" class="hourWeatherScroll" enable-flex="true">
+            <view wx:for="{{item.weatherData.hour}}" wx:for-item="hour" wx:key="fxTime" class="hour">
+              <text class="desc">{{hour.fxTime}}</text>
+              <image class="pic" src="{{hour.icon}}" />
+              <text class="desc">{{hour.temp}}℃</text>
+            </view>
+          </scroll-view>
+        </view>
+        <view class="subTitle">未来七天预报</view>
+        <template is="forecast" data="{{forcast:item.weatherData.forcast}}" />
+      </pullDownRefresh>
+    </scroll-view>
+  </swiper-item>
+</swiper>

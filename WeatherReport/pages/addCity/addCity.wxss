@@ -1,0 +1,66 @@
+/* pages/addCity/addCity.wxss */
+@import "../template/template.wxss";
+
+.addCitycontent{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.searchbar{
+  height: 70rpx;
+  margin: 0 30rpx;
+  background: #f9f9f9;
+  border-radius: 35rpx;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 20rpx;
+  font-size: 30rpx;
+  color: gray;
+}
+
+.searchbar .pic{
+  margin: 10rpx 30rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.selectedCity{
+  flex: 1;
+  height: 1px;
+}
+
+.selectedCity .city{
+  height: 150rpx;
+  margin: 30rpx 30rpx 0 30rpx;
+  background: lightskyblue;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.selectedCity .city .left{
+  height: 150rpx;
+  flex: 1;
+  margin-left: 50rpx;
+  font-size: 30rpx;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left .cityName{
+  font-size: 50rpx;
+}
+
+.selectedCity .city .right{
+  width: 150rpx;
+  height: 150rpx;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}

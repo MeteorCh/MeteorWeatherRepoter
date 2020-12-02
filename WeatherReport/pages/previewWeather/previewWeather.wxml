@@ -1,0 +1,17 @@
+<import src="../template/template.wxml" />
+<pullDownRefresh style="height:100%;" refreshing="{{refreshing}}" refreshed="{{refreshed}}" bind:refresh="refresh">
+  <template is="navigation" data="{{...item}}" />
+  <view style="margin-top: {{item.navH}}px;height:{{item.screenHeight-item.navH}}px;" class="previewContent">
+    <text class="previewTitle">未来七天天气状况</text>
+    <!--内容分为两部分，底部“添加到主页”固定在底部，scrollView占满布局-->
+    <scroll-view scroll-y="true" style="height:{{item.screenHeight-item.navH-260/item.ratio}}px">
+      <template is="forecast" data="{{forcast:forcast}}" />
+    </scroll-view>
+    <view class="footer">
+      <view class="iconContainer" bindtap="addCityToHome">
+        <image src="{{exist?'/sysIcon/right-arrow-white.png':'/sysIcon/add_white.png'}}" class="pic"></image>
+      </view>
+      <text class="des">{{exist?'前往主页查看':'添加到主页'}}</text>
+    </view>
+  </view>
+</pullDownRefresh>

@@ -1,0 +1,81 @@
+/* pages/citySelect/citySelect.wxss */
+@import "../template/template.wxss";
+@import "../index/index.wxss";
+@import "../addCity/addCity.wxss";
+.record{
+  width: 100%;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.record .curLocation{
+  height: 60rpx;
+  width: 200rpx;
+  background: #656565;
+  border-radius: 5rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+  color: white;
+}
+.record .curLocation .pic{
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.record .item{
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+  width: 200rpx;
+  background: #f9f9f9;
+  border-radius: 5rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.record .item text{
+  padding:20rpx 50rpx;
+  font-size: 30rpx;
+  color: gray;
+}
+
+.searchResItem{
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: lightgray solid 1px;
+  align-items: center;
+}
+.searchResItem .nameInfo{
+  padding: 20rpx 0;
+  display: flex;
+  flex-direction: column;
+}
+.searchResItem .pic{
+  width: 30rpx;
+  height: 30rpx;
+}
+.searchResItem .nameInfo .title{
+  color: black;
+  font-size: 30rpx;
+}
+
+.searchResItem .nameInfo .desc{
+  color: grey;
+  font-size: 20rpx;
+}
+
+.hover{
+  background: #ededed;
+}
