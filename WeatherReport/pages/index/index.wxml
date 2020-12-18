@@ -1,6 +1,7 @@
 <!--index.wxml-->
 <import src="../template/template.wxml" />
 <template is="navigation" data="{{navH:navH,icon:'/sysIcon/add.png',title:'小天气'}}" />
+<template is="loading" data="{{loadingHidden:loadingHidden}}"/>
 <swiper style="margin-top: {{navH}}px;height:{{screenHeight-navH}}px;" indicator-dots="{{cities.length>1}}"
   bindanimationfinish="itemChange" current="{{curSwiperItem}}">
   <swiper-item style="height:100%" wx:for="{{cities}}" wx:key="id">

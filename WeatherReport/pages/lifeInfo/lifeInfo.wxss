@@ -43,7 +43,7 @@
 .today .more{
   font-size: 40rpx;
   margin-top: 30rpx;
-  color: #FF6426;
+  color: #f58d3c;
   font-style: bold;
 }
 .card {

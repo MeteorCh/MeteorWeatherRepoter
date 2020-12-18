@@ -8,6 +8,19 @@
   </view>
 </template>
 
+<template name="loading">
+  <view id="loading" wx:if="{{loadingHidden}}">
+    <view class="rect-wapper">
+      <view class="rect-block">
+        <view class="rect-1 rect"></view>
+        <view class="rect-2 rect"></view>
+        <view class="rect-3 rect"></view>
+        <view class="rect-4 rect"></view>
+      </view>
+    </view>
+  </view>
+</template>
+
 <!--天气预报-->
 <template name="forecast">
   <view class="forecastContainer">

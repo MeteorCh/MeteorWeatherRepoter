@@ -5,6 +5,7 @@ const app = getApp()
 const maxCity = 8 //主页最大的城市数量，如果超过这个数量，就从第二个开始移除
 Page({
   data: {
+    loadingHidden:true,
     curSwiperItem: 0,
     haveDeleteCities: false, //是否有在城市管理中删除的数据
     cities: [], //用一个数组存储所有的城市
@@ -114,8 +115,10 @@ Page({
         });
       }
       //设置全部的数据
+      this.data.loadingHidden=false;
       that.setData({
-        cities: that.data.cities
+        cities: that.data.cities,
+        loadingHidden:false
       });
     });
   },

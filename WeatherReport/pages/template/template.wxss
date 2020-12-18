@@ -78,3 +78,72 @@
    margin-left: 80rpx;
    padding-top: 5rpx;
 }
+
+#loading{
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/**第二个Loader的css**/
+
+.rect-wapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 300rpx;
+  height: 300rpx;
+  margin-bottom: 120rpx;
+}
+
+.rect-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 120rpx;
+}
+
+.rect {
+  width: 6px;
+  height: 20px;
+  background-color: #f58d3c;
+}
+
+.rect-1 {
+  animation: grow 1s ease-in-out infinite;
+}
+
+.rect-2 {
+  animation: grow 1s ease-in-out 0.15s infinite; /*其中第一个1s指的是动画播放的花费时间，第二个0.15s指的是动画播放的延迟时间，其他同理*/
+}
+
+.rect-3 {
+  animation: grow 1s ease-in-out 0.3s infinite;
+}
+
+.rect-4 {
+  animation: grow 1s ease-in-out 0.45s infinite;
+}
+
+@keyframes grow {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(1.8);
+  }
+}
+
+/**第二个Loader的css**/

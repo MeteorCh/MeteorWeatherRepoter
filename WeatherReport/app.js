@@ -1,21 +1,21 @@
 const util = require("./utils/util");
 //app.js
 App({
-  onLaunch: function () {
-    //获取手机系统信息
-    var that=this
-    wx.getSystemInfo({
-      success:(res) => {
-        //屏幕高度
-        that.globalData.screenHeight=res.windowHeight;
-        that.globalData.screenWidth=res.windowWidth;
-        //导航高度
-        that.globalData.navHeight = res.statusBarHeight + 46;
-      }, fail(err) {
-        console.log(err);
-        that.globalData.navHeight=66;
-      }
-    })
+  onShow:function(){
+     //获取手机系统信息
+     var that=this
+     wx.getSystemInfo({
+       success:(res) => {
+         //屏幕高度
+         that.globalData.screenHeight=res.windowHeight;
+         that.globalData.screenWidth=res.windowWidth;
+         //导航高度
+         that.globalData.navHeight = res.statusBarHeight + 46;
+       }, fail(err) {
+         console.log(err);
+         that.globalData.navHeight=66;
+       }
+     })
   },
   //获取定位信息
   getLocation: function () {
